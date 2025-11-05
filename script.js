@@ -8,7 +8,7 @@ async function checkWeather(city) {
     if (response.status == 404) {
         document.querySelector(".error").style.display = "block";
         document.querySelector(".weather").style.display = "none";
-        // Clear weather info fields
+       
         document.querySelector(".city").innerHTML = "";
         document.querySelector(".temp").innerHTML = "";
         document.querySelector(".humidity").innerHTML = "";
