@@ -3,37 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Weather App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-   <div class="container">
-    <div class="inputfield">
-        <input type="text" class="input" placeholder="Enter city name" spellcheck="false">
-        <button class="btn">Search</button>
-    </div>
-    <div class="error">
-        Invalid city name
-    </div>
-        <div class="weather">
-            <h1 class="temp"></h1>
-            <h2 class="city"></h2>
-            <div class="weather-img"><img src="" alt="Weather Icon" ></div> 
-        <div class="details">
-            <div >
-            <h3 class="humidity">
-                
-            </h3>
-            <p>Humidity</p>
-             <div >
-            <h3 class="wind">
-                
-            </h3>
-            <p>Wind Speed</p>
+<body class="min-h-screen flex items-center justify-center p-4">
+    <div class="weather-info-card">
+        <h1>Weather App</h1>
+
+        <div class="search-container">
+            <input type="text" id="cityInput" placeholder="Enter city name" spellcheck="false">
+            <button id="searchBtn">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+
+        <div class="button-group">
+            <button id="locationBtn" class="location-btn">
+                <i class="fas fa-map-marker-alt"></i>Use Current Location
+            </button>
+            <button id="unitToggle" class="unit-toggle">
+                <i class="fas fa-thermometer-half"></i>°C
+            </button>
+        </div>
+
+
+
+        <div id="weatherInfo" class="hidden">
+            <div class="weather-main">
+                <h2 id="cityName"></h2>
+                <div id="temperature" class="temperature-display"></div>
+                <div id="weatherDescription" class="weather-description"></div>
+            </div>
+
+            <div class="weather-grid">
+                <div class="weather-card">
+                    <i class="weather-icon fas fa-tint"></i>
+                    <div id="humidity"></div>
+                    <div class="card-label">Humidity</div>
+                </div>
+                <div class="weather-card">
+                    <i class="weather-icon fas fa-wind"></i>
+                    <div id="windSpeed"></div>
+                    <div class="card-label">Wind Speed</div>
+                </div>
+                <div class="weather-card">
+                    <i class="weather-icon fas fa-thermometer-half"></i>
+                    <div id="feelsLike"></div>
+                    <div class="card-label">Feels Like</div>
+                </div>
+                <div class="weather-card">
+                    <i class="weather-icon fas fa-eye"></i>
+                    <div id="visibility"></div>
+                    <div class="card-label">Visibility</div>
+                </div>
+                <div class="weather-card">
+                    <i class="weather-icon fas fa-tachometer-alt"></i>
+                    <div id="pressure"></div>
+                    <div class="card-label">Pressure</div>
+                </div>
+                <div class="weather-card">
+                    <i class="weather-icon fas fa-cloud"></i>
+                    <div id="cloudiness"></div>
+                    <div class="card-label">Cloudiness</div>
+                </div>
             </div>
         </div>
+
+        <div id="errorMessage" class="hidden">
+            <i class="fas fa-exclamation-triangle"></i>
+            <div>City not found. Please try again.</div>
+        </div>
     </div>
-   </div> 
-   <script src="script.js"></script>
+
+    <script src="script.js"></script>
 </body>
 </html>
